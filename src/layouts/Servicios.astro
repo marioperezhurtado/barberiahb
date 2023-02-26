@@ -1,0 +1,59 @@
+---
+import { Image } from '@astrojs/image/components'
+import Servicio from '../components/Servicio.astro'
+---
+
+<section
+  class="font-display mx-auto mt-44 max-w-screen-xl px-10 sm:mt-56 lg:mt-72">
+  <h2
+    class="mx-auto flex w-fit flex-col items-center text-4xl font-semibold lg:text-5xl">
+    Nuestros servicios
+    <Image
+      src="texto-destacado.png"
+      alt="texto destacado"
+      width={290}
+      height={30}
+      format="webp"
+      class="mt-2 w-52 lg:w-72"
+    />
+  </h2>
+  <h3 class="mx-auto mt-14 max-w-screen-md text-center text-xl lg:text-2xl">
+    Disponemos de diferentes servicios para adaptarnos a las necesidades del
+    cliente.
+  </h3>
+  <ul
+    class="mx-auto mt-20 grid max-w-md gap-6 md:max-w-screen-md md:grid-cols-2 lg:max-w-screen-lg lg:grid-cols-3">
+    <li>
+      <Servicio
+        title="Corte clásico"
+        description="Lorem ipsum dolor sit amet."
+        image="local-barberia-hb.jpg"
+        price={8}
+      />
+    </li>
+    <li>
+      <Servicio
+        title="Corte degradado"
+        description="Lorem ipsum dolor sit amet."
+        image="local-barberia-hb.jpg"
+        price={8}
+      />
+    </li>
+    <li>
+      <Servicio
+        title="Afeitado barba"
+        description="Lorem ipsum dolor sit amet."
+        image="local-barberia-hb.jpg"
+        price={4}
+      />
+    </li>
+    <li>
+      <Servicio
+        title="Afeitado premium"
+        description="Lorem ipsum dolor sit amet."
+        image="local-barberia-hb.jpg"
+        price={7}
+      />
+    </li>
+  </ul>
+</section>

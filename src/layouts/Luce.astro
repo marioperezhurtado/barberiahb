@@ -1,0 +1,32 @@
+---
+import { Image } from '@astrojs/image/components'
+---
+
+<section
+  class="font-display mx-auto mt-44 flex max-w-screen-lg flex-wrap gap-20 px-10 text-center sm:mt-56 lg:mt-72 lg:text-left">
+  <div class="mx-auto max-w-screen-sm">
+    <h2
+      class="mb-10 inline-flex flex-wrap justify-center gap-x-2 text-4xl font-semibold lg:justify-start lg:text-5xl">
+      Luce los cortes más
+      <span class="inline-flex w-fit flex-col items-center">
+        modernos
+        <Image
+          src="texto-destacado.png"
+          alt="texto destacado"
+          width={290}
+          height={30}
+          format="webp"
+          class="lg:mt-1 w-52 lg:w-72"
+        />
+      </span> con estilo
+    </h2>
+    <h3 class="mb-5 text-xl lg:text-2xl">
+      Le damos el mejor tratamiento a tu pelo.
+    </h3>
+    <p class="text-xl lg:text-2xl">
+      Siéntete cómodo en nuestras instalaciones y lleva tu afeitado al siguiente
+      nivel.
+    </p>
+  </div>
+  <div class="mx-auto h-96 w-52 rounded-2xl bg-zinc-600"></div>
+</section>

@@ -1,0 +1,28 @@
+---
+import { Image } from '@astrojs/image/components'
+
+interface Props {
+  title: string
+  description: string
+  image: string
+  price: number
+}
+
+const { title, description, image, price } = Astro.props
+---
+
+<div
+  class="h-62 relative flex aspect-video flex-row overflow-hidden rounded-sm">
+  <div class={`bg-[url(${image})] w-1/2 h-64`}>
+    <div class="block h-full w-full rounded-sm bg-gradient-to-t from-black">
+    </div>
+  </div>
+
+  <div class="flex w-1/2 flex-col items-center bg-zinc-600 p-4">
+    <div class="flex items-start justify-between gap-2">
+      <h3 class="font-semibold">{title}</h3>
+      <span class="font-bold text-yellow-200">{price}€</span>
+    </div>
+    <p class="mt-auto text-sm">{description}</p>
+  </div>
+</div>

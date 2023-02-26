@@ -10,6 +10,15 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"astro": "^2.0.15"
+		"@astrojs/image": "^0.15.1",
+		"@astrojs/tailwind": "^3.0.1",
+		"@fontsource/pontano-sans": "^4.5.10",
+		"@fontsource/stint-ultra-expanded": "^4.5.8",
+		"astro": "^2.0.15",
+		"tailwindcss": "^3.0.24"
+	},
+	"devDependencies": {
+		"prettier": "^2.8.4",
+		"prettier-plugin-tailwindcss": "^0.2.3"
 	}
 }
