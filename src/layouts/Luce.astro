@@ -1,5 +1,6 @@
 ---
-import { Image } from '@astrojs/image/components'
+import Highlighted from '../components/Highlighted.astro'
+import Stories from '../components/Stories'
 ---
 
 <section
@@ -8,17 +9,8 @@ import { Image } from '@astrojs/image/components'
     <h2
       class="mb-10 inline-flex flex-wrap justify-center gap-x-2 text-4xl font-semibold lg:justify-start lg:text-5xl">
       Luce los cortes más
-      <span class="inline-flex w-fit flex-col items-center">
-        modernos
-        <Image
-          src="texto-destacado.png"
-          alt="texto destacado"
-          width={290}
-          height={30}
-          format="webp"
-          class="lg:mt-1 w-52 lg:w-72"
-        />
-      </span> con estilo
+      <Highlighted text="modernos" />
+      con estilo
     </h2>
     <h3 class="mb-5 text-xl lg:text-2xl">
       Le damos el mejor tratamiento a tu pelo.
@@ -28,5 +20,5 @@ import { Image } from '@astrojs/image/components'
       nivel.
     </p>
   </div>
-  <div class="mx-auto h-96 w-52 rounded-2xl bg-zinc-600"></div>
+  <Stories client:visible />
 </section>

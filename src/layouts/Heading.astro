@@ -1,11 +1,12 @@
 ---
 import { Image } from '@astrojs/image/components'
+import Highlighted from '../components/Highlighted.astro'
 ---
 
 <section
   class="font-display mx-auto flex max-w-screen-xl flex-col-reverse gap-10 px-5 pt-20 sm:px-10 md:pt-32 lg:flex-row lg:gap-20 lg:pt-44">
   <Image
-    src="local-barberia-hb.jpg"
+    src="images/local-barberia-hb.jpg"
     alt="Local Barbería HB en Crevillente"
     width={680}
     height={475}
@@ -17,17 +18,7 @@ import { Image } from '@astrojs/image/components'
     <h1
       class="mx-auto mb-10 max-w-screen-md gap-x-2 text-center text-4xl font-semibold lg:text-left lg:text-5xl">
       Barbería y peluquería de caballeros en
-      <span class="inline-flex w-fit flex-col items-center">
-        Crevillente
-        <Image
-          src="texto-destacado.png"
-          alt="texto destacado"
-          width={290}
-          height={30}
-          format="webp"
-          class="lg:mt-1 w-52 lg:w-72"
-        />
-      </span>
+      <Highlighted text="Crevillente" />
     </h1>
   </div>
 </section>

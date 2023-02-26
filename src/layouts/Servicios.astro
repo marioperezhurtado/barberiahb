@@ -1,5 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components'
+import Highlighted from '../components/Highlighted.astro'
 import Servicio from '../components/Servicio.astro'
 ---
 
@@ -7,15 +7,7 @@ import Servicio from '../components/Servicio.astro'
   class="font-display mx-auto mt-44 max-w-screen-xl px-10 sm:mt-56 lg:mt-72">
   <h2
     class="mx-auto flex w-fit flex-col items-center text-4xl font-semibold lg:text-5xl">
-    Nuestros servicios
-    <Image
-      src="texto-destacado.png"
-      alt="texto destacado"
-      width={290}
-      height={30}
-      format="webp"
-      class="mt-2 w-52 lg:w-72"
-    />
+    <Highlighted text="Nuestros servicios" />
   </h2>
   <h3 class="mx-auto mt-14 max-w-screen-md text-center text-xl lg:text-2xl">
     Disponemos de diferentes servicios para adaptarnos a las necesidades del
