@@ -10,7 +10,7 @@ const STORIES = [
 export default function Stories() {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [currentStory, setCurrentStory] = useState(0)
-  const [progress, setProgress] = useState(0)
+  const [timer, setTimer] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
 
@@ -21,6 +21,7 @@ export default function Stories() {
       setCurrentStory(currentStory - 1)
     }
     setIsPaused(false)
+    setTimer(0)
   }
 
   const handleNextStory = () => {
@@ -30,11 +31,25 @@ export default function Stories() {
       setCurrentStory(currentStory + 1)
     }
     setIsPaused(false)
+    setTimer(0)
   }
 
   const handleTogglePauseResume = () => setIsPaused((p) => !p)
   const handleToggleMuteUnmute = () => setIsMuted((m) => !m)
 
+  // Timer interval
+  useEffect(() => {
+    if (!videoRef.current) return
+
+    const interval = setInterval(() => {
+      if (isPaused) return
+      setTimer((p) => p + 1)
+    }, 1000)
+
+    return () => clearInterval(interval)
+  }, [isPaused])
+
+  // Play / Pause
   useEffect(() => {
     if (!videoRef.current) return
     if (isPaused) {
@@ -44,6 +59,7 @@ export default function Stories() {
     videoRef.current.play()
   }, [isPaused])
 
+  // Mute / Unmute
   useEffect(() => {
     if (!videoRef.current) return
     if (isMuted) {
@@ -53,14 +69,68 @@ export default function Stories() {
     videoRef.current.muted = false
   }, [isMuted])
 
+  console.log(Math.round((timer / STORIES[0].duration) * 100))
+
   return (
     <div className="group relative mx-auto h-96 w-52 overflow-hidden rounded-2xl">
       <div className="absolute top-0 h-12 w-full bg-gradient-to-b from-black opacity-0 transition-all group-hover:opacity-70" />
       <ul className="absolute top-1 right-1/2 mx-auto flex w-fit translate-x-1/2 gap-2">
-        <li className="h-1 w-10 rounded-sm bg-zinc-300 opacity-50 " />
-        <li className="h-1 w-10 rounded-sm bg-zinc-300 opacity-50" />
-        <li className="h-1 w-10 rounded-sm bg-zinc-300 opacity-50" />
-        <li className="h-1 w-10 rounded-sm bg-zinc-300 opacity-50" />
+        <li className="relative h-1 w-10 overflow-hidden rounded-sm">
+          <div className="absolute top-0 h-1 w-full bg-zinc-300 opacity-50" />
+          {currentStory > 0 && (
+            <div className="absolute top-0 h-1 w-full bg-hb-light opacity-70" />
+          )}
+          {currentStory === 0 && (
+            <div
+              className="absolute top-0 h-1 bg-hb-light opacity-70 transition-all"
+              style={{
+                width: `${(timer / STORIES[0].duration) * 100}%`
+              }}
+            />
+          )}
+        </li>
+        <li className="relative h-1 w-10 overflow-hidden rounded-sm">
+          <div className="absolute top-0 h-1 w-full bg-zinc-300 opacity-50" />
+          {currentStory > 1 && (
+            <div className="absolute top-0 h-1 w-full bg-hb-light opacity-70" />
+          )}
+          {currentStory === 1 && (
+            <div
+              className="absolute top-0 h-1 bg-hb-light opacity-70 transition-all"
+              style={{
+                width: `${(timer / STORIES[0].duration) * 100}%`
+              }}
+            />
+          )}
+        </li>
+        <li className="relative h-1 w-10 overflow-hidden rounded-sm">
+          <div className="absolute top-0 h-1 w-full bg-zinc-300 opacity-50" />
+          {currentStory > 2 && (
+            <div className="absolute top-0 h-1 w-full bg-hb-light opacity-70" />
+          )}
+          {currentStory === 2 && (
+            <div
+              className="absolute top-0 h-1 bg-hb-light opacity-70 transition-all"
+              style={{
+                width: `${(timer / STORIES[0].duration) * 100}%`
+              }}
+            />
+          )}
+        </li>
+        <li className="relative h-1 w-10 overflow-hidden rounded-sm">
+          <div className="absolute top-0 h-1 w-full bg-zinc-300 opacity-50" />
+          {currentStory > 3 && (
+            <div className="absolute top-0 h-1 w-full bg-hb-light opacity-70" />
+          )}
+          {currentStory === 3 && (
+            <div
+              className="absolute top-0 h-1 bg-hb-light opacity-70 transition-all"
+              style={{
+                width: `${(timer / STORIES[0].duration) * 100}%`
+              }}
+            />
+          )}
+        </li>
       </ul>
       <video
         ref={videoRef}
@@ -68,6 +138,7 @@ export default function Stories() {
         onEnded={handleNextStory}
         autoPlay
         muted
+        playsInline
         className="h-full object-cover"
       />
       <div
