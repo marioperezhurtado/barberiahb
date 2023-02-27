@@ -1,19 +1,20 @@
 ---
 import { Image } from '@astrojs/image/components'
 import Highlighted from '../components/Highlighted.astro'
+import Map from '../components/Map.astro'
 ---
 
 <section
-  class="max-w-screen-xl px-10 mx-auto font-display mt-44 sm:mt-56 lg:mt-72">
+  class="font-display mx-auto mt-44 max-w-screen-xl px-10 sm:mt-56 lg:mt-72">
   <h2
-    class="flex flex-col items-center mx-auto text-4xl font-semibold text-center w-fit lg:text-5xl">
+    class="mx-auto flex w-fit flex-col items-center text-center text-4xl font-semibold lg:text-5xl">
     <Highlighted text="Dónde encontrarnos" />
   </h2>
-  <h3 class="max-w-screen-md mx-auto text-xl text-center mt-14 lg:text-2xl">
+  <h3 class="mx-auto mt-14 max-w-screen-md text-center text-xl lg:text-2xl">
     Estamos en calle Gutiérrez de Cárdenas N4, en Crevillente, Alicante.
   </h3>
   <div
-    class="flex flex-col max-w-screen-md gap-10 mx-auto mt-10 text-lg w-fit lg:flex-row">
+    class="mx-auto mt-10 flex w-fit max-w-screen-md flex-col gap-10 text-lg lg:flex-row">
     <div class="flex flex-col gap-4">
       <p class="flex gap-2">
         <img
@@ -40,13 +41,6 @@ import Highlighted from '../components/Highlighted.astro'
         c/Gutiérrez de Cárdenas N4, 1Lo 03330
       </p>
     </div>
-    <Image
-      src="/images/mapa.png"
-      alt="mapa"
-      width={1262}
-      height={724}
-      format="webp"
-      class="object-cover w-full max-w-md rounded-sm aspect-video"
-    />
+    <Map />
   </div>
 </section>

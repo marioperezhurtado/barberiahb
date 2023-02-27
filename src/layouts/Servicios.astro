@@ -4,20 +4,28 @@ import Servicio from '../components/Servicio.astro'
 ---
 
 <section
-  class="max-w-screen-xl px-10 mx-auto font-display mt-44 sm:mt-56 lg:mt-72">
+  class="font-display mx-auto mt-44 max-w-screen-xl px-10 sm:mt-56 lg:mt-72">
   <h2
-    class="flex flex-col items-center mx-auto text-4xl font-semibold w-fit lg:text-5xl">
+    class="mx-auto flex w-fit flex-col items-center text-4xl font-semibold lg:text-5xl">
     <Highlighted text="Nuestros servicios" />
   </h2>
-  <h3 class="max-w-screen-md mx-auto text-xl text-center mt-14 lg:text-2xl">
+  <h3 class="mx-auto mt-14 max-w-screen-md text-center text-xl lg:text-2xl">
     Disponemos de diferentes servicios para adaptarnos a las necesidades del
     cliente.
   </h3>
   <ul
-    class="grid max-w-md gap-6 mx-auto mt-20 md:max-w-screen-md md:grid-cols-2 lg:max-w-screen-lg lg:grid-cols-3">
+    class="mx-auto mt-20 grid max-w-md gap-6 md:max-w-screen-md md:grid-cols-2 lg:max-w-screen-lg lg:grid-cols-3">
     <li>
       <Servicio
-        title="Corte clásico"
+        title="Corte niño y jubilado"
+        description="Lorem ipsum dolor sit amet."
+        image="images/local-barberia-hb.jpg"
+        price={7}
+      />
+    </li>
+    <li>
+      <Servicio
+        title="Corte"
         description="Lorem ipsum dolor sit amet."
         image="images/local-barberia-hb.jpg"
         price={8}
@@ -25,18 +33,18 @@ import Servicio from '../components/Servicio.astro'
     </li>
     <li>
       <Servicio
-        title="Corte degradado"
-        description="Lorem ipsum dolor sit amet."
-        image="images/local-barberia-hb.jpg"
-        price={8}
-      />
-    </li>
-    <li>
-      <Servicio
-        title="Afeitado barba"
+        title="Arreglo de barba"
         description="Lorem ipsum dolor sit amet."
         image="images/local-barberia-hb.jpg"
         price={4}
+      />
+    </li>
+    <li>
+      <Servicio
+        title="Corte + barba"
+        description="Lorem ipsum dolor sit amet."
+        image="images/local-barberia-hb.jpg"
+        price={12}
       />
     </li>
     <li>
@@ -45,6 +53,30 @@ import Servicio from '../components/Servicio.astro'
         description="Lorem ipsum dolor sit amet."
         image="images/local-barberia-hb.jpg"
         price={7}
+      />
+    </li>
+    <li>
+      <Servicio
+        title="Servicio premium"
+        description="Lorem ipsum dolor sit amet."
+        image="images/local-barberia-hb.jpg"
+        price={25}
+      />
+    </li>
+    <li>
+      <Servicio
+        title="1x Mascarillas faciales"
+        description="Lorem ipsum dolor sit amet."
+        image="images/local-barberia-hb.jpg"
+        price={6}
+      />
+    </li>
+    <li>
+      <Servicio
+        title="2x Mascarillas faciales"
+        description="Lorem ipsum dolor sit amet."
+        image="images/local-barberia-hb.jpg"
+        price={10}
       />
     </li>
   </ul>

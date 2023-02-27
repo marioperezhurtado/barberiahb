@@ -4,29 +4,33 @@ import Highlighted from '../components/Highlighted.astro'
 ---
 
 <section
-  class="flex max-w-screen-lg px-10 mx-auto font-display mt-44 gap-14 sm:mt-56 lg:mt-72">
-  <div>
+  id="oferta"
+  class="font-display mx-auto flex w-fit max-w-screen-lg flex-col-reverse flex-wrap gap-14 px-10 pt-44 sm:pt-56 lg:flex-row lg:pt-72">
+  <Image
+    src="images/oferta.jpeg"
+    alt="Oferta especial Barberia HB"
+    width={1004}
+    height={650}
+    format="webp"
+    quality={100}
+    class="object-cover object-top max-w-sm rounded-sm contrast-75 aspect-video mx-auto h-full"
+  />
+  <div class="mx-auto max-w-xl text-center lg:max-w-md lg:text-left">
     <h2
-      class="flex flex-wrap justify-center mx-auto text-4xl font-semibold w-fit gap-x-2 lg:justify-start lg:text-5xl">
+      class="mx-auto flex w-fit flex-wrap justify-center gap-x-2 text-4xl font-semibold lg:mx-0 lg:justify-start lg:text-5xl">
       <Highlighted text="Oferta especial" />
     </h2>
-    <h3 class="max-w-screen-md mx-auto text-xl mt-14 lg:text-2xl">
+    <h3 class="mx-auto mt-14 max-w-screen-md text-xl lg:text-2xl">
       Cada 5 cortes, consigues un descuento especial!
     </h3>
     <p class="mt-5 mb-2">
-      <strong>2€ de descuento</strong> en tu próximo corte
+      <strong>4€ de descuento</strong> en tu próximo corte.
     </p>
     <p>
-      <strong>4€ de descuento</strong> de descuento en tu próximo corte + barba
+      <strong>6€ de descuento</strong> en tu próximo corte + barba.
     </p>
+    <h3 class="mx-auto mt-10 max-w-screen-md text-xl lg:text-2xl">
+      ¡No te lo pierdas! 🎉
+    </h3>
   </div>
-  <Image
-    src="images/local-barberia-hb.jpg"
-    alt="Local Barbería HB en Crevillente"
-    width={680}
-    height={475}
-    format="webp"
-    quality={100}
-    class="object-cover object-top w-full max-w-md mx-auto rounded-sm aspect-video contrast-75"
-  />
 </section>
