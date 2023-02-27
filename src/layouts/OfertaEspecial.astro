@@ -1,8 +1,32 @@
-<div class="text-hb-dark bg-yellow-200 px-2 py-1 text-center font-semibold">
-  Oferta por tiempo limitado! 🎉 Cada 5 cortes, consigues un descuento especial!
-  <a
-    href="#oferta"
-    class="ml-2 inline-block rounded-sm border-2 border-yellow-400 bg-yellow-100 px-4 text-yellow-700 transition hover:border-yellow-500 hover:bg-yellow-500 hover:text-yellow-100">
-    Más información
-  </a>
-</div>
+---
+import { Image } from '@astrojs/image/components'
+import Highlighted from '../components/Highlighted.astro'
+---
+
+<section
+  class="flex max-w-screen-lg px-10 mx-auto font-display mt-44 gap-14 sm:mt-56 lg:mt-72">
+  <div>
+    <h2
+      class="flex flex-wrap justify-center mx-auto text-4xl font-semibold w-fit gap-x-2 lg:justify-start lg:text-5xl">
+      <Highlighted text="Oferta especial" />
+    </h2>
+    <h3 class="max-w-screen-md mx-auto text-xl mt-14 lg:text-2xl">
+      Cada 5 cortes, consigues un descuento especial!
+    </h3>
+    <p class="mt-5 mb-2">
+      <strong>2€ de descuento</strong> en tu próximo corte
+    </p>
+    <p>
+      <strong>4€ de descuento</strong> de descuento en tu próximo corte + barba
+    </p>
+  </div>
+  <Image
+    src="images/local-barberia-hb.jpg"
+    alt="Local Barbería HB en Crevillente"
+    width={680}
+    height={475}
+    format="webp"
+    quality={100}
+    class="object-cover object-top w-full max-w-md mx-auto rounded-sm aspect-video contrast-75"
+  />
+</section>
