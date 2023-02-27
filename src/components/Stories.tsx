@@ -69,62 +69,60 @@ export default function Stories() {
     videoRef.current.muted = false
   }, [isMuted])
 
-  console.log(Math.round((timer / STORIES[0].duration) * 100))
-
   return (
-    <div className="group relative mx-auto h-96 w-52 overflow-hidden rounded-2xl">
-      <div className="absolute top-0 h-12 w-full bg-gradient-to-b from-black opacity-0 transition-all group-hover:opacity-70" />
-      <ul className="absolute top-1 right-1/2 mx-auto flex w-fit translate-x-1/2 gap-2">
-        <li className="relative h-1 w-10 overflow-hidden rounded-sm">
-          <div className="absolute top-0 h-1 w-full bg-zinc-300 opacity-50" />
+    <div className="relative mx-auto overflow-hidden group h-96 w-52 rounded-2xl">
+      <div className="absolute top-0 w-full h-12 transition-all opacity-0 bg-gradient-to-b from-black group-hover:opacity-70" />
+      <ul className="absolute flex gap-2 mx-auto translate-x-1/2 top-1 right-1/2 w-fit">
+        <li className="relative w-10 h-1 overflow-hidden rounded-sm">
+          <div className="absolute top-0 w-full h-1 opacity-50 bg-zinc-300" />
           {currentStory > 0 && (
-            <div className="absolute top-0 h-1 w-full bg-hb-light opacity-70" />
+            <div className="absolute top-0 w-full h-1 bg-hb-light opacity-70" />
           )}
           {currentStory === 0 && (
             <div
-              className="absolute top-0 h-1 bg-hb-light opacity-70 transition-all"
+              className="absolute top-0 h-1 transition-all bg-hb-light opacity-70"
               style={{
                 width: `${(timer / STORIES[0].duration) * 100}%`
               }}
             />
           )}
         </li>
-        <li className="relative h-1 w-10 overflow-hidden rounded-sm">
-          <div className="absolute top-0 h-1 w-full bg-zinc-300 opacity-50" />
+        <li className="relative w-10 h-1 overflow-hidden rounded-sm">
+          <div className="absolute top-0 w-full h-1 opacity-50 bg-zinc-300" />
           {currentStory > 1 && (
-            <div className="absolute top-0 h-1 w-full bg-hb-light opacity-70" />
+            <div className="absolute top-0 w-full h-1 bg-hb-light opacity-70" />
           )}
           {currentStory === 1 && (
             <div
-              className="absolute top-0 h-1 bg-hb-light opacity-70 transition-all"
+              className="absolute top-0 h-1 transition-all bg-hb-light opacity-70"
               style={{
                 width: `${(timer / STORIES[0].duration) * 100}%`
               }}
             />
           )}
         </li>
-        <li className="relative h-1 w-10 overflow-hidden rounded-sm">
-          <div className="absolute top-0 h-1 w-full bg-zinc-300 opacity-50" />
+        <li className="relative w-10 h-1 overflow-hidden rounded-sm">
+          <div className="absolute top-0 w-full h-1 opacity-50 bg-zinc-300" />
           {currentStory > 2 && (
-            <div className="absolute top-0 h-1 w-full bg-hb-light opacity-70" />
+            <div className="absolute top-0 w-full h-1 bg-hb-light opacity-70" />
           )}
           {currentStory === 2 && (
             <div
-              className="absolute top-0 h-1 bg-hb-light opacity-70 transition-all"
+              className="absolute top-0 h-1 transition-all bg-hb-light opacity-70"
               style={{
                 width: `${(timer / STORIES[0].duration) * 100}%`
               }}
             />
           )}
         </li>
-        <li className="relative h-1 w-10 overflow-hidden rounded-sm">
-          <div className="absolute top-0 h-1 w-full bg-zinc-300 opacity-50" />
+        <li className="relative w-10 h-1 overflow-hidden rounded-sm">
+          <div className="absolute top-0 w-full h-1 opacity-50 bg-zinc-300" />
           {currentStory > 3 && (
-            <div className="absolute top-0 h-1 w-full bg-hb-light opacity-70" />
+            <div className="absolute top-0 w-full h-1 bg-hb-light opacity-70" />
           )}
           {currentStory === 3 && (
             <div
-              className="absolute top-0 h-1 bg-hb-light opacity-70 transition-all"
+              className="absolute top-0 h-1 transition-all bg-hb-light opacity-70"
               style={{
                 width: `${(timer / STORIES[0].duration) * 100}%`
               }}
@@ -139,26 +137,26 @@ export default function Stories() {
         autoPlay
         muted
         playsInline
-        className="h-full object-cover"
+        className="object-cover h-full"
       />
       <div
         onClick={handlePrevStory}
-        className="absolute left-0 top-0 h-full w-14"
+        className="absolute top-0 left-0 h-full w-14"
       />
       <div
         onClick={handleTogglePauseResume}
-        className="absolute right-1/2 top-0 h-full w-24 translate-x-1/2 "
+        className="absolute top-0 w-24 h-full translate-x-1/2 right-1/2 "
       />
       <div
         onClick={handleNextStory}
-        className="absolute right-0 top-0 h-full w-14"
+        className="absolute top-0 right-0 h-full w-14"
       />
       {isMuted && (
         <img
           onClick={handleToggleMuteUnmute}
           src="icons/muted.svg"
           alt="Unmute instagram story"
-          className="absolute top-4 left-3 w-5 opacity-0 transition-all group-hover:opacity-80"
+          className="absolute w-5 transition-all opacity-0 top-4 left-3 group-hover:opacity-80"
         />
       )}
       {!isMuted && (
@@ -166,7 +164,7 @@ export default function Stories() {
           onClick={handleToggleMuteUnmute}
           src="icons/unmuted.svg"
           alt="Mute instagram story"
-          className="absolute top-4 left-3 w-5 opacity-0 transition-all group-hover:opacity-80"
+          className="absolute w-5 transition-all opacity-0 top-4 left-3 group-hover:opacity-80"
         />
       )}
     </div>

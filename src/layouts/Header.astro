@@ -1,11 +1,11 @@
 ---
 import { Image } from '@astrojs/image/components'
-import OfertaEspecial from '../components/OfertaEspecial.astro'
+import OfertaEspecial from '../layouts/OfertaEspecial.astro'
 ---
 
-<OfertaEspecial />
+<OfertaEspecial/>
 <header
-  class="bg-hb-dark sticky top-0 z-10 mx-auto flex max-w-screen-xl flex-row items-center justify-between gap-y-4 gap-x-6 bg-opacity-90 py-4 px-10 backdrop-blur-sm sm:flex-col-reverse lg:flex-row">
+  class="sticky top-0 z-10 flex flex-row items-center justify-between max-w-screen-xl px-10 py-4 mx-auto bg-hb-dark gap-y-4 gap-x-6 bg-opacity-90 backdrop-blur-sm sm:flex-col-reverse lg:flex-row">
   <Image
     src="images/barberia-hb-logo.png"
     alt="Barberia HB Logo"
@@ -19,7 +19,7 @@ import OfertaEspecial from '../components/OfertaEspecial.astro'
       href="https://walink.co/5faefe"
       target="_blank"
       rel="noopener noreferrer"
-      class="flex items-center gap-1 rounded-sm p-2 transition hover:bg-green-500">
+      class="flex items-center gap-1 p-2 transition rounded-sm hover:bg-green-500">
       <img
         src="icons/whatsapp-pide-cita.svg"
         alt="Whatsapp Pide Cita"
@@ -31,7 +31,7 @@ import OfertaEspecial from '../components/OfertaEspecial.astro'
       href="https://www.instagram.com/barberia_hb/"
       target="_blank"
       rel="noopener noreferrer"
-      class="flex items-center gap-1 rounded-sm p-2 transition hover:bg-indigo-500">
+      class="flex items-center gap-1 p-2 transition rounded-sm hover:bg-indigo-500">
       <img
         src="icons/instagram-@barberia_hb.svg"
         alt="Instagram @barberia_hb"
@@ -43,10 +43,10 @@ import OfertaEspecial from '../components/OfertaEspecial.astro'
       href="https://goo.gl/maps/LDZzZJZ4VwXF89qo7"
       target="_blank"
       rel="noopener noreferrer"
-      class="flex items-center gap-1 rounded-sm p-2 transition hover:bg-cyan-600">
+      class="flex items-center gap-1 p-2 transition rounded-sm hover:bg-cyan-600">
       <img
         src="icons/direccion-Calle-Gutierrez-de-Cardenas.svg"
-        alt="Instagram @barberia_hb"
+        alt="Dirección Calle Gutiérrez de Cárdenas N4 Crevillente"
         class="w-5"
       />
       <span class="hidden sm:inline">
