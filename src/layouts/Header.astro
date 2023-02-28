@@ -5,7 +5,7 @@ import BannerOferta from '../layouts/BannerOferta.astro'
 
 <BannerOferta />
 <header
-  class="sticky top-0 z-10 flex flex-row items-center justify-between max-w-screen-xl px-10 py-4 mx-auto bg-hb-dark gap-y-4 gap-x-6 bg-opacity-90 backdrop-blur-sm sm:flex-col-reverse lg:flex-row">
+  class="bg-hb-dark sticky top-0 z-10 mx-auto flex max-w-screen-xl flex-row items-center justify-between gap-y-4 gap-x-6 bg-opacity-90 px-10 py-4 backdrop-blur-sm sm:flex-col-reverse lg:flex-row">
   <Image
     src="images/barberia-hb-logo.png"
     alt="Barberia HB Logo"
@@ -14,45 +14,51 @@ import BannerOferta from '../layouts/BannerOferta.astro'
     format="webp"
     class="w-24 sm:w-32"
   />
-  <nav class="flex gap-2 text-sm">
-    <a
-      href="https://walink.co/5faefe"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="flex items-center gap-1 p-2 transition rounded-sm hover:bg-green-500">
-      <img
-        src="icons/whatsapp-pide-cita.svg"
-        alt="Whatsapp Pide Cita"
-        class="w-5"
-      />
-      <span class="hidden sm:inline">+34 613 501 517</span>
-    </a>
-    <a
-      href="https://www.instagram.com/barberia_hb/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="flex items-center gap-1 p-2 transition rounded-sm hover:bg-indigo-500">
-      <img
-        src="icons/instagram-@barberia_hb.svg"
-        alt="Instagram @barberia_hb"
-        class="w-5"
-      />
-      <span class="hidden sm:inline">@barberia_hb</span>
-    </a>
-    <a
-      href="https://goo.gl/maps/LDZzZJZ4VwXF89qo7"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="flex items-center gap-1 p-2 transition rounded-sm hover:bg-cyan-600">
-      <img
-        src="icons/direccion-Calle-Gutierrez-de-Cardenas.svg"
-        alt="Dirección Calle Gutiérrez de Cárdenas N4 Crevillente"
-        class="w-5"
-      />
-      <span class="hidden sm:inline">
-        c/ Gutiérrez de Cárdenas N4
-        <span class="hidden md:inline">, 1Lo - 03330 Crevillente</span>
-      </span>
-    </a>
-  </nav>
+  <ul class="flex gap-2 text-sm">
+    <li>
+      <a
+        href="https://walink.co/5faefe"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-1 rounded-sm p-2 transition hover:bg-green-500">
+        <img
+          src="icons/whatsapp-pide-cita.svg"
+          alt="Whatsapp Pide Cita"
+          class="w-5"
+        />
+        <span class="hidden sm:inline">+34 613 501 517</span>
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.instagram.com/barberia_hb/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-1 rounded-sm p-2 transition hover:bg-indigo-500">
+        <img
+          src="icons/instagram-@barberia_hb.svg"
+          alt="Instagram @barberia_hb"
+          class="w-5"
+        />
+        <span class="hidden sm:inline">@barberia_hb</span>
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://goo.gl/maps/LDZzZJZ4VwXF89qo7"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-1 rounded-sm p-2 transition hover:bg-cyan-600">
+        <img
+          src="icons/direccion-Calle-Gutierrez-de-Cardenas.svg"
+          alt="Dirección Calle Gutiérrez de Cárdenas N4 Crevillente"
+          class="w-5"
+        />
+        <span class="hidden sm:inline">
+          c/ Gutiérrez de Cárdenas N4
+          <span class="hidden md:inline">, 1Lo - 03330 Crevillente</span>
+        </span>
+      </a>
+    </li>
+  </ul>
 </header>
