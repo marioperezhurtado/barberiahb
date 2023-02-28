@@ -70,65 +70,13 @@ export default function Stories() {
   }, [isMuted])
 
   return (
-    <div className="relative mx-auto overflow-hidden group h-96 w-52 rounded-2xl">
-      <div className="absolute top-0 w-full h-12 transition-all opacity-0 bg-gradient-to-b from-black group-hover:opacity-70" />
-      <ul className="absolute flex gap-2 mx-auto translate-x-1/2 top-1 right-1/2 w-fit">
-        <li className="relative w-10 h-1 overflow-hidden rounded-sm">
-          <div className="absolute top-0 w-full h-1 opacity-50 bg-zinc-300" />
-          {currentStory > 0 && (
-            <div className="absolute top-0 w-full h-1 bg-hb-light opacity-70" />
-          )}
-          {currentStory === 0 && (
-            <div
-              className="absolute top-0 h-1 transition-all bg-hb-light opacity-70"
-              style={{
-                width: `${(timer / STORIES[0].duration) * 100}%`
-              }}
-            />
-          )}
-        </li>
-        <li className="relative w-10 h-1 overflow-hidden rounded-sm">
-          <div className="absolute top-0 w-full h-1 opacity-50 bg-zinc-300" />
-          {currentStory > 1 && (
-            <div className="absolute top-0 w-full h-1 bg-hb-light opacity-70" />
-          )}
-          {currentStory === 1 && (
-            <div
-              className="absolute top-0 h-1 transition-all bg-hb-light opacity-70"
-              style={{
-                width: `${(timer / STORIES[0].duration) * 100}%`
-              }}
-            />
-          )}
-        </li>
-        <li className="relative w-10 h-1 overflow-hidden rounded-sm">
-          <div className="absolute top-0 w-full h-1 opacity-50 bg-zinc-300" />
-          {currentStory > 2 && (
-            <div className="absolute top-0 w-full h-1 bg-hb-light opacity-70" />
-          )}
-          {currentStory === 2 && (
-            <div
-              className="absolute top-0 h-1 transition-all bg-hb-light opacity-70"
-              style={{
-                width: `${(timer / STORIES[0].duration) * 100}%`
-              }}
-            />
-          )}
-        </li>
-        <li className="relative w-10 h-1 overflow-hidden rounded-sm">
-          <div className="absolute top-0 w-full h-1 opacity-50 bg-zinc-300" />
-          {currentStory > 3 && (
-            <div className="absolute top-0 w-full h-1 bg-hb-light opacity-70" />
-          )}
-          {currentStory === 3 && (
-            <div
-              className="absolute top-0 h-1 transition-all bg-hb-light opacity-70"
-              style={{
-                width: `${(timer / STORIES[0].duration) * 100}%`
-              }}
-            />
-          )}
-        </li>
+    <div className="group relative mx-auto h-96 w-52 overflow-hidden rounded-2xl">
+      <div className="absolute top-0 h-12 w-full bg-gradient-to-b from-black opacity-70 transition-all group-hover:opacity-70 sm:opacity-0" />
+      <ul className="absolute top-1 right-1/2 mx-auto flex w-fit translate-x-1/2 gap-2">
+        <Progress currentStory={currentStory} timer={timer} storyIndex={0} />
+        <Progress currentStory={currentStory} timer={timer} storyIndex={1} />
+        <Progress currentStory={currentStory} timer={timer} storyIndex={2} />
+        <Progress currentStory={currentStory} timer={timer} storyIndex={3} />
       </ul>
       <video
         ref={videoRef}
@@ -137,7 +85,7 @@ export default function Stories() {
         autoPlay
         muted
         playsInline
-        className="object-cover h-full"
+        className="h-full object-cover"
       />
       <div
         onClick={handlePrevStory}
@@ -145,7 +93,7 @@ export default function Stories() {
       />
       <div
         onClick={handleTogglePauseResume}
-        className="absolute top-0 w-24 h-full translate-x-1/2 right-1/2 "
+        className="absolute top-0 right-1/2 h-full w-24 translate-x-1/2 "
       />
       <div
         onClick={handleNextStory}
@@ -156,7 +104,7 @@ export default function Stories() {
           onClick={handleToggleMuteUnmute}
           src="icons/muted.svg"
           alt="Unmute instagram story"
-          className="absolute w-5 transition-all opacity-0 top-4 left-3 group-hover:opacity-80"
+          className="absolute top-4 left-3 w-5 opacity-80 transition-all group-hover:opacity-80 sm:opacity-0"
         />
       )}
       {!isMuted && (
@@ -164,9 +112,34 @@ export default function Stories() {
           onClick={handleToggleMuteUnmute}
           src="icons/unmuted.svg"
           alt="Mute instagram story"
-          className="absolute w-5 transition-all opacity-0 top-4 left-3 group-hover:opacity-80"
+          className="absolute top-4 left-3 w-5 opacity-80 transition-all group-hover:opacity-80 sm:opacity-0"
         />
       )}
     </div>
+  )
+}
+
+type ProgressProps = {
+  currentStory: number
+  timer: number
+  storyIndex: number
+}
+
+function Progress({ currentStory, timer, storyIndex }: ProgressProps) {
+  return (
+    <li className="relative h-1 w-10 overflow-hidden rounded-sm">
+      <div className="absolute top-0 h-1 w-full bg-zinc-300 opacity-50" />
+      {currentStory > storyIndex && (
+        <div className="absolute top-0 h-1 w-full bg-hb-light opacity-70" />
+      )}
+      {currentStory === storyIndex && (
+        <div
+          className="absolute top-0 h-1 bg-hb-light opacity-70 transition-all"
+          style={{
+            width: `${(timer / STORIES[storyIndex].duration) * 100}%`
+          }}
+        />
+      )}
+    </li>
   )
 }

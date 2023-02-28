@@ -9,7 +9,7 @@ module.exports = {
       },
       fontFamily: {
         display: ['Stint Ultra Expanded', 'display'],
-        body: ['Pontano Sans', 'body']
+        body: ['Inter', 'body']
       }
     }
   },

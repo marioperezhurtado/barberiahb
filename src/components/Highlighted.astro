@@ -1,6 +1,4 @@
 ---
-import { Image } from '@astrojs/image/components'
-
 interface Props {
   text: string
 }
@@ -10,12 +8,11 @@ const { text } = Astro.props
 
 <span class="inline-flex w-fit flex-col items-center">
   {text}
-  <Image
+  <img
     src="images/texto-destacado.png"
     alt="texto destacado"
     width={416}
     height={44}
-    format="webp"
-    class="lg:mt-1 w-52 lg:w-72"
+    class="w-32 sm:w-52 lg:mt-1 lg:w-72"
   />
 </span>

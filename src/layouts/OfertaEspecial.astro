@@ -1,14 +1,13 @@
 ---
-import { Image } from '@astrojs/image/components'
 import Highlighted from '../components/Highlighted.astro'
 ---
 
 <section
   id="oferta"
-  class="font-display mx-auto flex w-fit max-w-screen-lg flex-col flex-wrap gap-14 px-10 pt-44 sm:pt-56 lg:flex-row lg:pt-72">
+  class="font-display mx-auto flex w-fit max-w-screen-lg flex-col flex-wrap gap-14 px-5 pt-44 sm:px-10 sm:pt-56 lg:flex-row lg:pt-72">
   <div class="mx-auto max-w-xl text-center lg:max-w-md lg:text-left">
     <h2
-      class="mx-auto flex w-fit flex-wrap justify-center gap-x-2 text-4xl font-semibold lg:mx-0 lg:justify-start lg:text-5xl">
+      class="mx-auto flex w-fit flex-wrap justify-center gap-x-2 text-3xl font-semibold sm:text-4xl lg:mx-0 lg:justify-start lg:text-5xl">
       <Highlighted text="Oferta especial" />
     </h2>
     <h3 class="mx-auto mt-14 max-w-screen-md text-xl lg:text-2xl">
@@ -24,13 +23,11 @@ import Highlighted from '../components/Highlighted.astro'
       ¡No te lo pierdas! 🎉
     </h3>
   </div>
-  <Image
+  <img
     src="images/oferta.jpeg"
     alt="Oferta especial Barberia HB"
     width={1004}
     height={650}
-    format="webp"
-    quality={100}
-    class="object-cover object-top w-full h-full max-w-sm mx-auto rounded-sm contrast-75 aspect-video"
+    class="mx-auto aspect-video h-full w-full max-w-sm rounded-sm object-cover object-top contrast-75"
   />
 </section>

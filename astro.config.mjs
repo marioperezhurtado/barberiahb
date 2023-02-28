@@ -4,30 +4,13 @@ import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 
 // https://astro.build/config
-import image from '@astrojs/image'
-
-// https://astro.build/config
 import react from '@astrojs/react'
 
 // https://astro.build/config
 import sitemap from '@astrojs/sitemap'
 
 // https://astro.build/config
-import vercel from '@astrojs/vercel/serverless'
-
-// https://astro.build/config
-
-// https://astro.build/config
 export default defineConfig({
   site: 'https://barberiahb.com',
-  integrations: [
-    tailwind(),
-    image(),
-    react(),
-    sitemap({
-      customPages: ['https://barberiahb.com']
-    })
-  ],
-  output: 'server',
-  adapter: vercel()
+  integrations: [tailwind(), react(), sitemap()]
 })
