@@ -4,7 +4,7 @@ const STORIES = [
   { src: 'ig-story-barberia-hb-1.mp4', duration: 54 },
   { src: 'ig-story-barberia-hb-2.mp4', duration: 61 },
   { src: 'ig-story-barberia-hb-3.mp4', duration: 13 },
-  { src: 'ig-story-barberia-hb-4.mp4', duration: 0 }
+  { src: 'ig-story-barberia-hb-4.mp4', duration: 6 }
 ]
 
 export default function Stories() {

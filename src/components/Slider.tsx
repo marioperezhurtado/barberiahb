@@ -3,38 +3,33 @@ import { useState, useRef, useEffect } from 'react'
 const slides = [
   {
     id: 1,
-    title: 'Corte niño y jubilado',
-    image: 'https://via.placeholder.com/150'
+    title: 'Corte estándar',
+    image: 'images/servicios/corte-estandar.jpg'
   },
   {
     id: 2,
-    title: 'Corte estándar',
-    image: 'https://via.placeholder.com/150'
+    title: 'Arreglo de barba',
+    image: 'images/servicios/arreglo-barba.jpeg'
   },
   {
     id: 3,
-    title: 'Arreglo de barba',
-    image: 'https://via.placeholder.com/150'
+    title: 'Afeitado premium',
+    image: 'https://placekitten.com/200/300'
   },
   {
     id: 4,
-    title: 'Corte + Arreglo de barba',
-    image: 'https://via.placeholder.com/150'
+    title: 'Servicio premium',
+    image: 'https://placekitten.com/200/300'
   },
   {
     id: 5,
-    title: 'Afeitado premium',
-    image: 'https://via.placeholder.com/150'
+    title: 'Corte niño y jubilado',
+    image: 'https://placekitten.com/200/300'
   },
   {
     id: 6,
-    title: 'Servicio premium',
-    image: 'https://via.placeholder.com/150'
-  },
-  {
-    id: 7,
     title: 'Mascarillas faciales',
-    image: 'https://via.placeholder.com/150'
+    image: 'https://placekitten.com/200/300'
   }
 ]
 
@@ -60,48 +55,61 @@ export default function Slider() {
 
   useEffect(() => {
     if (sliderRef.current) {
-      const nextScrollWidth = currentSlide * 288 + 8 * currentSlide
+      const width = sliderRef.current.firstElementChild?.clientWidth
+      if (!width) return
 
       sliderRef.current.scrollTo({
-        left: nextScrollWidth,
+        left: currentSlide * width + 8 * currentSlide,
         behavior: 'smooth'
       })
     }
   }, [currentSlide])
 
   return (
-    <div className="relative mx-auto mt-10 h-60 max-w-screen-md select-none overflow-hidden rounded-sm">
+    <div className="relative mx-auto mt-10 h-72 w-72 max-w-full select-none md:w-full md:max-w-screen-sm">
       <ul
         ref={sliderRef}
         className="hideScrollbar flex h-full items-center gap-2 overflow-x-scroll">
         {slides.map((slide, i) => (
           <li
             key={i}
-            className="relative h-60 w-72 flex-shrink-0 overflow-hidden rounded-sm text-center">
-            <h3 className="absolute top-0 w-full p-4">{slide.title}</h3>
+            className="relative h-full w-52 flex-shrink-0 text-center">
+            <h3 className="absolute bottom-0 h-fit w-full bg-hb-dark/80 p-4 font-semibold backdrop-blur-sm">
+              {slide.title}
+            </h3>
             <img
               loading="lazy"
               src={slide.image}
               alt={slide.title}
               width={288}
               height={10}
-              className="pointer-events-none h-60 object-cover"
+              className="pointer-events-none h-full w-full object-cover"
             />
           </li>
         ))}
       </ul>
-      <div className="absolute top-1/2 flex w-full -translate-y-1/2 justify-between px-2 text-hb-dark">
-        <button
-          onClick={handlePrevSlide}
-          className="h-10 w-10 rounded-full bg-zinc-300/50">
-          &#8617;
-        </button>
-        <button
-          onClick={handleNextSlide}
-          className="h-10 w-10 rounded-full bg-zinc-300/50">
-          &#8618;
-        </button>
-      </div>
+      <button
+        className="absolute -left-12 top-1/2 hidden -translate-y-1/2 md:block"
+        onClick={handlePrevSlide}>
+        <img
+          src="icons/left.svg"
+          alt="Slide left"
+          height={32}
+          width={32}
+          className="rounded-full bg-zinc-300/50 transition-all hover:bg-zinc-300/100"
+        />
+      </button>
+      <button
+        className="absolute -right-12 top-1/2 hidden -translate-y-1/2 md:block"
+        onClick={handleNextSlide}>
+        <img
+          src="icons/right.svg"
+          alt="Slide right"
+          height={32}
+          width={32}
+          className="rounded-full bg-zinc-300/50 transition-all hover:bg-zinc-300/100"
+        />
+      </button>
     </div>
   )
 }
