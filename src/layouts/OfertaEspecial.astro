@@ -2,9 +2,10 @@
 import Highlighted from '../components/Highlighted.astro'
 ---
 
+<span id="oferta-especial"></span>
 <section
   id="oferta"
-  class="font-display mx-auto flex w-fit max-w-screen-lg flex-col flex-wrap gap-14 px-5 pt-44 sm:px-10 sm:pt-56 lg:flex-row lg:pt-72">
+  class="font-display mx-auto mt-44 flex w-fit max-w-screen-lg flex-col flex-wrap gap-14 px-5 sm:mt-56 sm:px-10 lg:mt-72 lg:flex-row">
   <div class="mx-auto max-w-xl text-center lg:max-w-md lg:text-left">
     <h2
       class="mx-auto flex w-fit flex-wrap justify-center gap-x-2 text-3xl font-semibold sm:text-4xl lg:mx-0 lg:justify-start lg:text-5xl">
@@ -24,6 +25,7 @@ import Highlighted from '../components/Highlighted.astro'
     </h3>
   </div>
   <img
+    loading="lazy"
     src="images/oferta.jpeg"
     alt="Oferta especial Barberia HB"
     width={1004}

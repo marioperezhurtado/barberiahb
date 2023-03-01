@@ -8,6 +8,8 @@ import Encuentranos from '../layouts/Encuentranos.astro'
 import PideCita from '../layouts/PideCita.astro'
 import OfertaEspecial from '../layouts/OfertaEspecial.astro'
 import Footer from '../layouts/Footer.astro'
+
+import '../styles/styles.css'
 ---
 
 <Layout>
@@ -20,3 +22,36 @@ import Footer from '../layouts/Footer.astro'
   <PideCita />
   <Footer />
 </Layout>
+
+<script>
+  function addObserver(el: HTMLElement | null, className: string) {
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(className)
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      {
+        threshold: 0.5
+      }
+    )
+    observer.observe(el)
+  }
+  const luce = document.getElementById('luce')
+  const servicios = document.getElementById('servicios')
+  const encuentranos = document.getElementById('encuentranos')
+  const ofertaEspecial = document.getElementById('oferta')
+  const pideCita = document.getElementById('pide-cita')
+
+  const layouts = [luce, servicios, encuentranos, ofertaEspecial, pideCita]
+
+  layouts.forEach((el) => {
+    el?.classList.add('opacity-0')
+    addObserver(el, 'slideUp')
+  })
+</script>

@@ -1,9 +1,11 @@
 ---
 import Highlighted from '../components/Highlighted.astro'
-import Servicio from '../components/Servicio.astro'
+// import Servicio from '../components/Servicio.astro'
+import Slider from '../components/Slider'
 ---
 
 <section
+  id="servicios"
   class="font-display mx-auto mt-44 max-w-screen-xl px-5 sm:mt-56 sm:px-10 lg:mt-72">
   <h2
     class="mx-auto flex w-fit flex-col items-center text-center text-3xl font-semibold sm:text-4xl lg:text-5xl">
@@ -13,62 +15,5 @@ import Servicio from '../components/Servicio.astro'
     Disponemos de diferentes servicios para adaptarnos a las necesidades del
     cliente.
   </h3>
-  <ul class="mx-auto mt-10 flex max-w-screen-md flex-wrap gap-4">
-    <li>
-      <Servicio
-        title="Corte niño y jubilado"
-        description="Lorem ipsum dolor sit amet."
-        image="images/local-barberia-hb.jpg"
-        price={7}
-      />
-    </li>
-    <li>
-      <Servicio
-        title="Corte"
-        description="Lorem ipsum dolor sit amet."
-        image="images/local-barberia-hb.jpg"
-        price={8}
-      />
-    </li>
-    <li>
-      <Servicio
-        title="Arreglo de barba"
-        description="Lorem ipsum dolor sit amet."
-        image="images/local-barberia-hb.jpg"
-        price={4}
-      />
-    </li>
-    <li>
-      <Servicio
-        title="Corte + barba"
-        description="Lorem ipsum dolor sit amet."
-        image="images/local-barberia-hb.jpg"
-        price={12}
-      />
-    </li>
-    <li>
-      <Servicio
-        title="Afeitado premium"
-        description="Lorem ipsum dolor sit amet."
-        image="images/local-barberia-hb.jpg"
-        price={7}
-      />
-    </li>
-    <li>
-      <Servicio
-        title="Servicio premium"
-        description="Lorem ipsum dolor sit amet."
-        image="images/local-barberia-hb.jpg"
-        price={25}
-      />
-    </li>
-    <li>
-      <Servicio
-        title="Mascarillas faciales"
-        description="Lorem ipsum dolor sit amet."
-        image="images/local-barberia-hb.jpg"
-        price={10}
-      />
-    </li>
-  </ul>
+  <Slider client:visible />
 </section>
