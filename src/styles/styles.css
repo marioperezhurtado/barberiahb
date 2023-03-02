@@ -10,7 +10,7 @@ body {
   display: none;
 }
 .slideUp {
-  animation: slideUp 0.7s ease-in-out forwards;
+  animation: slideUp 1s ease-in-out forwards;
 }
 
 @keyframes slideUp {
@@ -21,5 +21,18 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(10rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

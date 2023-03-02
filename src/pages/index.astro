@@ -27,19 +27,14 @@ import '../styles/styles.css'
   function addObserver(el: HTMLElement | null, className: string) {
     if (!el) return
 
-    const observer = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(className)
-            observer.unobserve(entry.target)
-          }
-        })
-      },
-      {
-        threshold: 0.5
-      }
-    )
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(className)
+          observer.unobserve(entry.target)
+        }
+      })
+    })
     observer.observe(el)
   }
   const luce = document.getElementById('luce')
