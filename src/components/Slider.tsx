@@ -4,13 +4,13 @@ const slides = [
   {
     id: 1,
     title: 'Corte estándar',
-    image: 'images/servicios/corte-estandar.jpg',
+    image: 'images/servicios/corte-estandar.webp',
     price: 8
   },
   {
     id: 2,
     title: 'Arreglo de barba',
-    image: 'images/servicios/arreglo-barba.jpeg',
+    image: 'images/servicios/arreglo-barba.webp',
     price: 4
   },
   {
