@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from 'react'
 
 const STORIES = [
-  { src: 'ig-story-barberia-hb-1.mp4', duration: 54 },
-  { src: 'ig-story-barberia-hb-2.mp4', duration: 61 },
-  { src: 'ig-story-barberia-hb-3.mp4', duration: 13 },
-  { src: 'ig-story-barberia-hb-4.mp4', duration: 6 }
+  { src: 'ig-story-barberia-hb-1.webm', duration: 54 },
+  { src: 'ig-story-barberia-hb-2.webm', duration: 61 },
+  { src: 'ig-story-barberia-hb-3.webm', duration: 13 },
+  { src: 'ig-story-barberia-hb-4.webm', duration: 6 }
 ]
 
 export default function Stories() {
@@ -70,7 +70,7 @@ export default function Stories() {
   }, [isMuted])
 
   return (
-    <div className="group relative mx-auto h-96 w-52 overflow-hidden rounded-2xl">
+    <div className="group relative mx-auto h-96 w-52 overflow-hidden rounded-2xl bg-zinc-700">
       <div className="absolute top-0 h-12 w-full bg-gradient-to-b from-black opacity-70 transition-all group-hover:opacity-70 sm:opacity-0" />
       <ul className="absolute top-1 right-1/2 mx-auto flex w-fit translate-x-1/2 gap-2">
         <Progress currentStory={currentStory} timer={timer} storyIndex={0} />

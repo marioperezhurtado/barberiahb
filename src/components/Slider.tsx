@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useRef } from 'react'
 
 const slides = [
   {
@@ -15,26 +15,26 @@ const slides = [
   },
   {
     id: 3,
-    title: 'Afeitado premium',
-    image: 'https://placekitten.com/200/300',
+    title: 'Corte niño y jubilado',
+    image: 'images/servicios/corte-niño-jubilado.webp',
     price: 7
   },
   {
     id: 4,
-    title: 'Servicio premium',
-    image: 'https://placekitten.com/200/300',
-    price: 25
+    title: 'Afeitado premium',
+    image: 'images/servicios/afeitado-premium.webp',
+    price: 7
   },
   {
     id: 5,
-    title: 'Corte niño y jubilado',
-    image: 'https://placekitten.com/200/300',
-    price: 7
+    title: 'Servicio premium',
+    image: 'images/servicios/servicio-premium.webp',
+    price: 25
   },
   {
     id: 6,
     title: 'Mascarillas faciales',
-    image: 'https://placekitten.com/200/300',
+    image: 'images/servicios/mascarillas-faciales.webp',
     price: 6
   }
 ]
@@ -74,7 +74,7 @@ export default function Slider() {
             <h3 className="absolute bottom-0 h-fit w-full bg-hb-dark/80 p-4 font-semibold backdrop-blur-sm">
               {slide.title}
             </h3>
-            <p className="absolute top-0 right-0 m-1 rounded-full bg-hb-dark/50 p-1 font-bold text-yellow-300">
+            <p className="absolute top-0 right-0 m-1 rounded-full bg-hb-dark/50 p-1 font-bold text-yellow-300 backdrop-blur-sm">
               {slide.price}€
             </p>
 
@@ -94,7 +94,7 @@ export default function Slider() {
         onClick={() => handleScroll('prev')}>
         <img
           src="icons/left.svg"
-          alt="Slide left"
+          alt="Deslizar a la izquierda"
           height={32}
           width={32}
           className="rounded-full bg-zinc-300/50 transition-all hover:bg-zinc-300/100"
@@ -105,7 +105,7 @@ export default function Slider() {
         onClick={() => handleScroll('next')}>
         <img
           src="icons/right.svg"
-          alt="Slide right"
+          alt="Deslizar a la derecha"
           height={32}
           width={32}
           className="rounded-full bg-zinc-300/50 transition-all hover:bg-zinc-300/100"
