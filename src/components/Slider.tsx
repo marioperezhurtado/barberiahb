@@ -4,66 +4,63 @@ const slides = [
   {
     id: 1,
     title: 'Corte estándar',
-    image: 'images/servicios/corte-estandar.jpg'
+    image: 'images/servicios/corte-estandar.jpg',
+    price: 8
   },
   {
     id: 2,
     title: 'Arreglo de barba',
-    image: 'images/servicios/arreglo-barba.jpeg'
+    image: 'images/servicios/arreglo-barba.jpeg',
+    price: 4
   },
   {
     id: 3,
     title: 'Afeitado premium',
-    image: 'https://placekitten.com/200/300'
+    image: 'https://placekitten.com/200/300',
+    price: 7
   },
   {
     id: 4,
     title: 'Servicio premium',
-    image: 'https://placekitten.com/200/300'
+    image: 'https://placekitten.com/200/300',
+    price: 25
   },
   {
     id: 5,
     title: 'Corte niño y jubilado',
-    image: 'https://placekitten.com/200/300'
+    image: 'https://placekitten.com/200/300',
+    price: 7
   },
   {
     id: 6,
     title: 'Mascarillas faciales',
-    image: 'https://placekitten.com/200/300'
+    image: 'https://placekitten.com/200/300',
+    price: 6
   }
 ]
 
 export default function Slider() {
   const sliderRef = useRef<HTMLUListElement>(null)
-  const [currentSlide, setCurrentSlide] = useState(0)
 
-  const handleNextSlide = () => {
-    if (currentSlide < slides.length - 1) {
-      setCurrentSlide(currentSlide + 1)
+  const handleScroll = (direction: 'next' | 'prev') => {
+    if (!sliderRef.current) return
+
+    const currentScroll = sliderRef.current.scrollLeft
+    const maxScroll = sliderRef.current.clientWidth
+
+    const slideWidth = sliderRef.current.firstElementChild?.clientWidth
+    if (!slideWidth) return
+
+    const newScroll =
+      currentScroll + (direction === 'next' ? +slideWidth + 8 : -slideWidth - 8)
+    const jumpTo = direction === 'next' ? 0 : maxScroll
+
+    if (newScroll < -8 || newScroll > maxScroll + 8) {
+      sliderRef.current.scrollTo({ left: jumpTo, behavior: 'smooth' })
       return
     }
-    setCurrentSlide(0)
+    sliderRef.current.scrollTo({ left: newScroll, behavior: 'smooth' })
   }
-
-  const handlePrevSlide = () => {
-    if (currentSlide > 0) {
-      setCurrentSlide(currentSlide - 1)
-      return
-    }
-    setCurrentSlide(slides.length - 1)
-  }
-
-  useEffect(() => {
-    if (sliderRef.current) {
-      const width = sliderRef.current.firstElementChild?.clientWidth
-      if (!width) return
-
-      sliderRef.current.scrollTo({
-        left: currentSlide * width + 8 * currentSlide,
-        behavior: 'smooth'
-      })
-    }
-  }, [currentSlide])
 
   return (
     <div className="relative mx-auto mt-10 h-72 w-72 max-w-full select-none md:w-full md:max-w-screen-sm">
@@ -77,6 +74,10 @@ export default function Slider() {
             <h3 className="absolute bottom-0 h-fit w-full bg-hb-dark/80 p-4 font-semibold backdrop-blur-sm">
               {slide.title}
             </h3>
+            <p className="absolute top-0 right-0 m-1 rounded-full bg-hb-dark/50 p-1 font-bold text-yellow-300">
+              {slide.price}€
+            </p>
+
             <img
               loading="lazy"
               src={slide.image}
@@ -90,7 +91,7 @@ export default function Slider() {
       </ul>
       <button
         className="absolute -left-12 top-1/2 hidden -translate-y-1/2 md:block"
-        onClick={handlePrevSlide}>
+        onClick={() => handleScroll('prev')}>
         <img
           src="icons/left.svg"
           alt="Slide left"
@@ -101,7 +102,7 @@ export default function Slider() {
       </button>
       <button
         className="absolute -right-12 top-1/2 hidden -translate-y-1/2 md:block"
-        onClick={handleNextSlide}>
+        onClick={() => handleScroll('next')}>
         <img
           src="icons/right.svg"
           alt="Slide right"
