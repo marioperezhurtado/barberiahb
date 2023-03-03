@@ -1,63 +1,50 @@
 [
   {
     "title": "Aceites capilares",
-    "image": "/images/productos/aceites-capilares.png",
-    "prices": ["1x9€", "3x15€"]
+    "image": "/images/productos/aceites-capilares.webp"
   },
   {
     "title": "Lacas y espumas",
-    "image": "/images/productos/lacas-espumas.png",
-    "prices": ["1x8€"]
+    "image": "/images/productos/lacas-espumas.webp"
   },
-
   {
     "title": "Ceras brillo",
-    "image": "/images/productos/ceras-brillo.png",
-    "prices": ["1x9€", "2x15€"]
+    "image": "/images/productos/ceras-brillo.webp"
   },
   {
     "title": "Ceras mate",
-    "image": "/images/productos/ceras-mate.png",
-    "prices": ["1x9€", "2x15€"]
+    "image": "/images/productos/ceras-mate.webp"
   },
   {
     "title": "Ceras efecto mojado",
-    "image": "/images/productos/ceras-efecto-mojado.png",
-    "prices": ["1x9€", "2x15€"]
+    "image": "/images/productos/ceras-efecto-mojado.webp"
   },
   {
     "title": "Gel de fijación",
-    "image": "/images/productos/gel-fijacion.png",
-    "prices": ["1x9€", "3x15€"]
+    "image": "/images/productos/gel-fijacion.webp"
   },
   {
     "title": "Polvos de volumen",
-    "image": "/images/productos/polvos-volumen.png",
-    "prices": ["1x9€", "3x15€"]
+    "image": "/images/productos/polvos-volumen.webp"
   },
   {
     "title": "Sérum de barba",
-    "image": "/images/productos/serum-barba.png",
-    "prices": ["1x9€", "2x15€"]
+    "image": "/images/productos/serum-barba.webp"
   },
   {
     "title": "Gel de afeitar",
-    "image": "/images/productos/gel-afeitar.png",
-    "prices": ["1x6€"]
+    "image": "/images/productos/gel-afeitar.webp"
   },
   {
     "title": "After shave",
-    "image": "/images/productos/aftershave.png",
-    "prices": ["1x6€"]
+    "image": "/images/productos/aftershave.webp"
   },
   {
     "title": "Colonias",
-    "image": "/images/productos/colonias.png",
-    "prices": ["1x6€"]
+    "image": "/images/productos/colonias.webp"
   },
   {
     "title": "Mascarillas",
-    "image": "/images/productos/mascarillas.png",
-    "prices": ["1x9€", "3x15€"]
+    "image": "/images/productos/mascarillas.webp"
   }
 ]

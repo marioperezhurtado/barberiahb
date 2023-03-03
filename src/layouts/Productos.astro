@@ -13,7 +13,7 @@ import productos from '../content/productos.json'
     Descubre nuestra selección de productos para el cuidado personal.
   </h3>
   <ul
-    class="xs:grid-cols-3 mx-auto mt-14 grid max-w-screen-lg grid-cols-2 gap-2 md:grid-cols-4">
+    class="xs:grid-cols-3 mx-auto mt-14 grid max-w-screen-lg grid-cols-2 gap-2 md:grid-cols-4 md:gap-4">
     {productos.map((p) => <Product product={p} />)}
   </ul>
 </section>

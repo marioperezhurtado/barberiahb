@@ -3,7 +3,6 @@ interface Props {
   product: {
     title: string
     image: string
-    prices: string[]
   }
 }
 
@@ -12,9 +11,10 @@ const { product } = Astro.props
 
 <li class="group relative aspect-square w-full overflow-hidden bg-zinc-700">
   <h3
-    class="bg-hb-dark/80 absolute bottom-0 z-10 w-full p-2 text-center font-bold backdrop-blur-sm sm:p-4">
+    class="bg-hb-dark/80 pointer-events-none absolute bottom-0 z-10 w-full p-2 text-center font-bold backdrop-blur-sm sm:p-4">
     {product.title}
   </h3>
+
   <img
     loading="lazy"
     src={product.image}

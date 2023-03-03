@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from 'react'
 
 const STORIES = [
-  { src: 'ig-story-barberia-hb-1.webm', duration: 54 },
-  { src: 'ig-story-barberia-hb-2.webm', duration: 61 },
-  { src: 'ig-story-barberia-hb-3.webm', duration: 13 },
-  { src: 'ig-story-barberia-hb-4.webm', duration: 6 }
+  { src: 'ig-story-barberia-hb-1', duration: 54 },
+  { src: 'ig-story-barberia-hb-2', duration: 61 },
+  { src: 'ig-story-barberia-hb-3', duration: 13 },
+  { src: 'ig-story-barberia-hb-4', duration: 6 }
 ]
 
 export default function Stories() {
@@ -69,6 +69,12 @@ export default function Stories() {
     videoRef.current.muted = false
   }, [isMuted])
 
+  // New source (made to fix safari :/)
+  useEffect(() => {
+    if (!videoRef.current) return
+    videoRef.current.load()
+  }, [currentStory])
+
   return (
     <div className="group relative mx-auto h-96 w-52 overflow-hidden rounded-2xl bg-zinc-700">
       <div className="absolute top-0 h-12 w-full bg-gradient-to-b from-black opacity-70 transition-all group-hover:opacity-70 sm:opacity-0" />
@@ -80,13 +86,20 @@ export default function Stories() {
       </ul>
       <video
         ref={videoRef}
-        src={`ig-stories/${STORIES[currentStory].src}`}
         onEnded={handleNextStory}
         autoPlay
         muted
         playsInline
-        className="h-full object-cover"
-      />
+        className="h-full object-cover">
+        <source
+          src={`ig-stories/${STORIES[currentStory].src}.webm`}
+          type="video/webm"
+        />
+        <source
+          src={`ig-stories/${STORIES[currentStory].src}.mp4`}
+          type="video/mp4"
+        />
+      </video>
       <div
         onClick={handlePrevStory}
         className="absolute top-0 left-0 h-full w-14"
@@ -104,7 +117,7 @@ export default function Stories() {
           onClick={handleToggleMuteUnmute}
           src="icons/muted.svg"
           alt="Unmute instagram story"
-          className="absolute top-4 left-3 w-5 opacity-80 transition-all group-hover:opacity-80 sm:opacity-0"
+          className="absolute top-2 left-1 w-9 p-2 opacity-80 transition-all group-hover:opacity-80 sm:opacity-0"
         />
       )}
       {!isMuted && (
@@ -112,7 +125,7 @@ export default function Stories() {
           onClick={handleToggleMuteUnmute}
           src="icons/unmuted.svg"
           alt="Mute instagram story"
-          className="absolute top-4 left-3 w-5 opacity-80 transition-all group-hover:opacity-80 sm:opacity-0"
+          className="absolute top-2 left-1 w-9 p-2 opacity-80 transition-all group-hover:opacity-80 sm:opacity-0"
         />
       )}
     </div>
