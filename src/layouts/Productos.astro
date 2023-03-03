@@ -1,17 +1,19 @@
 ---
 import Highlighted from '../components/Highlighted.astro'
-import Slider from '../components/Slider'
+import Product from '../components/Product.astro'
+import productos from '../content/productos.json'
 ---
 
-<section
-  class="font-display mx-auto mt-44 max-w-screen-xl px-5 sm:mt-56 sm:px-10 lg:mt-72">
+<section class="mx-auto mt-44 max-w-screen-xl px-5 sm:mt-56 sm:px-10 lg:mt-72">
   <h2
-    class="mx-auto flex w-fit flex-col items-center text-center text-3xl font-semibold sm:text-4xl lg:text-5xl">
-    <Highlighted text="Nuestros servicios" />
+    class="font-display mx-auto flex w-fit flex-col items-center text-center text-3xl font-semibold sm:text-4xl lg:text-5xl">
+    <Highlighted text="Productos" />
   </h2>
   <h3 class="mx-auto mt-14 max-w-screen-md text-center text-xl lg:text-2xl">
-    Disponemos de diferentes servicios para adaptarnos a las necesidades del
-    cliente.
+    Descubre nuestra selección de productos para el cuidado personal.
   </h3>
-  <Slider client:visible />
+  <ul
+    class="xs:grid-cols-3 mx-auto mt-14 grid max-w-screen-lg grid-cols-2 gap-2 md:grid-cols-4">
+    {productos.map((p) => <Product product={p} />)}
+  </ul>
 </section>

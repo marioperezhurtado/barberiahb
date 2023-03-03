@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
 type Slide = {
-  id: number
   title: string
   image: string
   price: number

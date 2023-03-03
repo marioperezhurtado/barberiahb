@@ -10,6 +10,9 @@ module.exports = {
       fontFamily: {
         display: ['Stint Ultra Expanded', 'display'],
         body: ['Inter', 'body']
+      },
+      screens: {
+        xs: '500px'
       }
     }
   },

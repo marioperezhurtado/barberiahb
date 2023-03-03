@@ -1,0 +1,63 @@
+[
+  {
+    "title": "Aceites capilares",
+    "image": "/images/productos/aceites-capilares.png",
+    "prices": ["1x9€", "3x15€"]
+  },
+  {
+    "title": "Lacas y espumas",
+    "image": "/images/productos/lacas-espumas.png",
+    "prices": ["1x8€"]
+  },
+
+  {
+    "title": "Ceras brillo",
+    "image": "/images/productos/ceras-brillo.png",
+    "prices": ["1x9€", "2x15€"]
+  },
+  {
+    "title": "Ceras mate",
+    "image": "/images/productos/ceras-mate.png",
+    "prices": ["1x9€", "2x15€"]
+  },
+  {
+    "title": "Ceras efecto mojado",
+    "image": "/images/productos/ceras-efecto-mojado.png",
+    "prices": ["1x9€", "2x15€"]
+  },
+  {
+    "title": "Gel de fijación",
+    "image": "/images/productos/gel-fijacion.png",
+    "prices": ["1x9€", "3x15€"]
+  },
+  {
+    "title": "Polvos de volumen",
+    "image": "/images/productos/polvos-volumen.png",
+    "prices": ["1x9€", "3x15€"]
+  },
+  {
+    "title": "Sérum de barba",
+    "image": "/images/productos/serum-barba.png",
+    "prices": ["1x9€", "2x15€"]
+  },
+  {
+    "title": "Gel de afeitar",
+    "image": "/images/productos/gel-afeitar.png",
+    "prices": ["1x6€"]
+  },
+  {
+    "title": "After shave",
+    "image": "/images/productos/aftershave.png",
+    "prices": ["1x6€"]
+  },
+  {
+    "title": "Colonias",
+    "image": "/images/productos/colonias.png",
+    "prices": ["1x6€"]
+  },
+  {
+    "title": "Mascarillas",
+    "image": "/images/productos/mascarillas.png",
+    "prices": ["1x9€", "3x15€"]
+  }
+]
