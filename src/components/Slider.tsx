@@ -18,7 +18,9 @@ export default function Slider() {
       currentScroll + (direction === 'next' ? +slideWidth + 8 : -slideWidth - 8)
     const jumpTo = direction === 'next' ? 0 : maxScroll
 
-    if (newScroll < -8 || newScroll > maxScroll + 8) {
+    console.log(newScroll, maxScroll)
+
+    if (newScroll < 0 || newScroll > maxScroll) {
       sliderRef.current.scrollTo({ left: jumpTo, behavior: 'smooth' })
       return
     }
@@ -26,7 +28,7 @@ export default function Slider() {
   }
 
   return (
-    <div className="relative mx-auto mt-10 h-72 w-72 max-w-full select-none md:w-full md:max-w-screen-sm">
+    <div className="relative mx-auto mt-10 h-72 w-full max-w-sm select-none xs:max-w-lg md:max-w-screen-sm">
       <ul
         ref={sliderRef}
         className="hideScrollbar flex h-full items-center gap-2 overflow-y-hidden overflow-x-scroll">

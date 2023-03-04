@@ -1,0 +1,22 @@
+[
+  {
+    "src": "ig-stories/ig-story-barberia-hb-1",
+    "duration": 54,
+    "poster": "ig-stories/posters/ig-poster-barberia-hb-1.webp"
+  },
+  {
+    "src": "ig-stories/ig-story-barberia-hb-2",
+    "duration": 61,
+    "poster": "ig-stories/posters/ig-poster-barberia-hb-2.webp"
+  },
+  {
+    "src": "ig-stories/ig-story-barberia-hb-3",
+    "duration": 13,
+    "poster": "ig-stories/posters/ig-poster-barberia-hb-3.webp"
+  },
+  {
+    "src": "ig-stories/ig-story-barberia-hb-4",
+    "duration": 6,
+    "poster": "ig-stories/posters/ig-poster-barberia-hb-4.webp"
+  }
+]

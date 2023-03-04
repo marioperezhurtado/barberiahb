@@ -1,11 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-
-const STORIES = [
-  { src: 'ig-story-barberia-hb-1', duration: 54 },
-  { src: 'ig-story-barberia-hb-2', duration: 61 },
-  { src: 'ig-story-barberia-hb-3', duration: 13 },
-  { src: 'ig-story-barberia-hb-4', duration: 6 }
-]
+import stories from '../content/stories.json'
 
 export default function Stories() {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -16,21 +10,21 @@ export default function Stories() {
 
   const handlePrevStory = () => {
     if (currentStory === 0) {
-      setCurrentStory(STORIES.length - 1)
-    } else {
-      setCurrentStory(currentStory - 1)
+      setCurrentStory(stories.length - 1)
+      setTimer(0)
+      return
     }
-    setIsPaused(false)
+    setCurrentStory(currentStory - 1)
     setTimer(0)
   }
 
   const handleNextStory = () => {
-    if (currentStory === STORIES.length - 1) {
+    if (currentStory === stories.length - 1) {
       setCurrentStory(0)
-    } else {
-      setCurrentStory(currentStory + 1)
+      setTimer(0)
+      return
     }
-    setIsPaused(false)
+    setCurrentStory(currentStory + 1)
     setTimer(0)
   }
 
@@ -71,6 +65,8 @@ export default function Stories() {
 
   // New source (made to fix safari :/)
   useEffect(() => {
+    setTimer(0)
+
     if (!videoRef.current) return
     videoRef.current.load()
   }, [currentStory])
@@ -87,18 +83,13 @@ export default function Stories() {
       <video
         ref={videoRef}
         onEnded={handleNextStory}
+        poster={stories[currentStory].poster}
         autoPlay
         muted
         playsInline
         className="h-full object-cover">
-        <source
-          src={`ig-stories/${STORIES[currentStory].src}.webm`}
-          type="video/webm"
-        />
-        <source
-          src={`ig-stories/${STORIES[currentStory].src}.mp4`}
-          type="video/mp4"
-        />
+        <source src={`${stories[currentStory].src}.webm`} type="video/webm" />
+        <source src={`${stories[currentStory].src}.mp4`} type="video/mp4" />
       </video>
       <div
         onClick={handlePrevStory}
@@ -149,7 +140,7 @@ function Progress({ currentStory, timer, storyIndex }: ProgressProps) {
         <div
           className="absolute top-0 h-1 bg-hb-light opacity-70 transition-all"
           style={{
-            width: `${(timer / STORIES[storyIndex].duration) * 100}%`
+            width: `${(timer / stories[storyIndex].duration) * 100}%`
           }}
         />
       )}
