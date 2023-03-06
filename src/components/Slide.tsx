@@ -16,7 +16,7 @@ export default function Slide({ slide }: { slide: Slide }) {
       onMouseLeave={() => setIsOpen(false)}
       className="relative h-full w-52 flex-shrink-0 text-center font-body">
       <div
-        className={`absolute flex h-full w-full flex-col gap-4 bg-hb-dark/80 p-4 backdrop-blur-sm transition-all duration-500 
+        className={`absolute flex h-full w-full flex-col gap-4 bg-hb-dark/80 py-4 backdrop-blur-sm transition-all duration-500 
         ${isOpen ? 'top-0 pt-10' : 'top-[235px]'}`}>
         <h3 className="font-bold">{slide.title}</h3>
         <p
