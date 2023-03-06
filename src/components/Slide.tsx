@@ -19,7 +19,11 @@ export default function Slide({ slide }: { slide: Slide }) {
         className={`absolute flex h-full w-full flex-col gap-4 bg-hb-dark/80 p-4 backdrop-blur-sm transition-all duration-500 
         ${isOpen ? 'top-0 pt-10' : 'top-[235px]'}`}>
         <h3 className="font-bold">{slide.title}</h3>
-        <p>{slide.description}</p>
+        <p
+          className={`${isOpen ? 'opacity-100' : 'opacity-0'} 
+          transition-all duration-500`}>
+          {slide.description}
+        </p>
       </div>
       <button
         className={`absolute top-0 left-0 m-1 rounded-full bg-zinc-200/70 backdrop-blur-sm transition-all sm:hidden 
